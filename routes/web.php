@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FirebaseController;
+use App\Http\Controllers\usercontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +21,12 @@ Route::get('/', function () {
 });
 
 Route::view('home', 'index');
+
+Route::get('/firebase', [FirebaseController::class, 'index']);
+Route::post('/firebase', [FirebaseController::class, 'store']);
+
+route::get('register',[usercontroller::class,'register']);
+route::get('login',[usercontroller::class,'login']);
+route::get('recoverpwd',[usercontroller::class,'recoverpwd']);
+
+
